@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { Fila } from '../../model/fila';
+import { Chamado } from '../../model/chamado';
 
 /**
  * Generated class for the FecharChamadoPage page.
@@ -17,6 +18,8 @@ import { Fila } from '../../model/fila';
 export class FecharChamadoPage {
 
   public filas : Fila[];
+  public chamados : Chamado[];
+
 
   constructor(public navCtrl: NavController) 
   {
@@ -24,6 +27,11 @@ export class FecharChamadoPage {
     let f2 = {nome:'Orientação'};
     let f3 = {nome:'Limpeza'};
     this.filas = [f1,f2,f3];
+
+    let c1 = {descricao:'Computador precisa ser formatado', status: "aberto",fila: f1};
+    let c2 = {descricao:'Como instala o Office365?',status: "aberto", fila: f2};
+    let c3 = {descricao:'Precisamos de uma limpeza no corredor C2, derrubaram café!',status: "aberto", fila: f3}
+    this.chamados = [c1,c2,c3];
   }
 
   ListarChamado(fila: Fila){

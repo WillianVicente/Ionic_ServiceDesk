@@ -40,14 +40,14 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <ion-card *ngFor="let chamado of chamados">
       <ion-card-header>
         Chamado
       </ion-card-header>
       <ion-card-content>
-        Fila: Manutenção <br/>
-        Descrição: Computador precisa ser formatado<br/>
-        Status: Aberto<br/>
+        Fila:  {{chamado.fila.nome}} <br/>
+        Descrição: {{chamado.descricao}}<br/>
+        Status: {{chamado.status}}<br/>
         <button ion-button>Fechar Chamado</button>
       </ion-card-content>
   </ion-card>
